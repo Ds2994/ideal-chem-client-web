@@ -10,6 +10,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import PeopleAltRoundedIcon from '@material-ui/icons/PeopleAltRounded';
 import ViewListIcon from '@material-ui/icons/ViewList';
 import HomeIcon from '@material-ui/icons/Home';
+import CustomerHome from '../../containers/Customer/CustomerHome';
 
 const drawerWidth = 200;
 
@@ -33,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
-    padding: theme.spacing(2),
+    padding: theme.spacing(3),
   },
 }));
 
@@ -58,7 +59,7 @@ const Navbar = () => {
                         <ListItemIcon><HomeIcon color="primary"/></ListItemIcon>
                         <ListItemText primary="Dashboard" color="primary"/>
                     </ListItem>
-                    <ListItem button key="Customer" onClick={() => setBody(<h1>Customer!!!</h1>)}>
+                    <ListItem button key="Customer" onClick={() => setBody(<CustomerHome/>)}>
                         <ListItemIcon><PeopleAltRoundedIcon color="primary"/></ListItemIcon>
                         <ListItemText primary="Customer" color="primary"/>
                     </ListItem>
@@ -72,7 +73,7 @@ const Navbar = () => {
         <main className={classes.content}>
             {body}
         </main>
-        </div>
+    </div>
     );
 }
 
