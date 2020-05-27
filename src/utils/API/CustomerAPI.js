@@ -7,3 +7,12 @@ export function getCustomers(name, success, error) {
     .then(response => success(response))
     .catch(err => error(err));
 }
+
+export function postCustomer(data, success, error) {
+  axios.post(GET_CUSTOMER , data, {
+    headers: {
+      'Content-Type': 'application/json'
+    }})
+    .then(response => success(response))
+    .catch(err => error(err));
+}

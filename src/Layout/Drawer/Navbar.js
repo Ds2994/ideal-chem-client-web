@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { Link, Route, Switch } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
@@ -10,7 +11,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import PeopleAltRoundedIcon from '@material-ui/icons/PeopleAltRounded';
 import ViewListIcon from '@material-ui/icons/ViewList';
 import HomeIcon from '@material-ui/icons/Home';
-import CustomerHome from '../../containers/Customer/CustomerHome';
+import CustomerHome from '../../containers/CustomerHome/CustomerHome';
+import CustomerCreate from '../../containers/CustomerCreate/CustomerCreate';
+import InvoiceHome from '../../containers/InvoiceHome/InvoiceHome';
 
 const drawerWidth = 200;
 
@@ -55,23 +58,34 @@ const Navbar = () => {
             <div className={classes.toolbar} />
             <Divider />
                 <List>
-                    <ListItem button key="Dashboard" onClick={() => setBody(<h1>Dashboard!!!</h1>)}>
+                  <Link to="/" style={{ textDecoration: 'none'}}>
+                    <ListItem button key="Dashboard">
                         <ListItemIcon><HomeIcon color="primary"/></ListItemIcon>
                         <ListItemText primary="Dashboard" color="primary"/>
                     </ListItem>
-                    <ListItem button key="Customer" onClick={() => setBody(<CustomerHome/>)}>
-                        <ListItemIcon><PeopleAltRoundedIcon color="primary"/></ListItemIcon>
-                        <ListItemText primary="Customer" color="primary"/>
-                    </ListItem>
-                    <ListItem button key="Invoices" onClick={() => setBody(<h1>Invoice!!!</h1>)}>
-                        <ListItemIcon><ViewListIcon color="primary"/></ListItemIcon>
-                        <ListItemText primary="Invoices" color="primary"/>
-                    </ListItem>
+                  </Link>
+                  <Link to="/customer" style={{ textDecoration: 'none'}}>
+                      <ListItem button key="Customer">
+                          <ListItemIcon><PeopleAltRoundedIcon color="primary"/></ListItemIcon>
+                          <ListItemText primary="Customer" color="primary"/>
+                      </ListItem>
+                   </Link>
+                   <Link to="/invoice" style={{ textDecoration: 'none'}}>
+                      <ListItem button key="Invoice">
+                          <ListItemIcon><ViewListIcon color="primary"/></ListItemIcon>
+                          <ListItemText primary="Invoice" color="primary"/>
+                      </ListItem>
+                    </Link>
                 </List> 
             <Divider />
         </Drawer>
+         
         <main className={classes.content}>
-            {body}
+          <Switch>
+            <Route exact path="/customer" component={CustomerHome} />
+            <Route exact path="/customer/create" component={CustomerCreate} />
+            <Route exact path="/invoice" component={InvoiceHome} />
+          </Switch>
         </main>
     </div>
     );

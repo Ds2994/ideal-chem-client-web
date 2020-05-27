@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Styles from '../../containers/Customer/CustomerHome.module.css';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
+import Appbar from '../../components/Appbar/Appbar';
+import Styles from '../../containers/CustomerHome/CustomerHome.module.css';
+import { Link } from 'react-router-dom';
 import Backdrop from '@material-ui/core/Backdrop';
+import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
@@ -41,10 +42,12 @@ const CustomerHome = () => {
     const [isLoading, setLoading] = useState(false);
     const [name, setName] = useState(null);
     const [error, setError] = useState(false);
+    const [warning, setWarning] = useState(false);
     const [errorMessage, setErrorMessage] = useState(null);
     const [customers, setCustomers] = useState([]);
 
     var errorPopUp = null;
+    var warningPopUp = null;
     let customerList = null;
 
     //Validation Method
@@ -60,10 +63,10 @@ const CustomerHome = () => {
       //Base Setup for loading and error
       setLoading(true);
       setError(false);
+      setWarning(false);
       setErrorMessage(null);
       setCustomers([]);
 
-      console.log(name);
       //Validation method
       if(validateName(name)) {
         getCustomers(name, 
@@ -78,6 +81,9 @@ const CustomerHome = () => {
           });
       }else {
         setLoading(false);
+        setErrorMessage('Please Enter Name')
+        setTimeout(() => {setWarning(true)}, 500);
+        
       }
     };
 
@@ -97,30 +103,31 @@ const CustomerHome = () => {
       setName(event.target.value);
     };
 
+    if(warning) {
+      console.log('warning setup');
+      warningPopUp = <SnackBar
+        type="warning"
+        message={errorMessage}
+      />
+    }
+
     if(error) {
       console.log('error setup');
       errorPopUp = <SnackBar
         type="error"
         message={errorMessage}
-        key="error"
       />
     }
 
-
-    return ( 
+    return (
         <div>
-            <AppBar position="fixed" className={classes.appBar}>
-            <Toolbar>
-              <div className={Styles.toolBar}>
-                <h2>CUSTOMER SEARCH</h2>
-              </div>              
-            </Toolbar>
-            </AppBar>
+            <Appbar title="CUSTOMER SEARCH" />
             
             <main className={classes.content}>
             <div className={classes.toolbar} />
 
               {errorPopUp}
+              {warningPopUp}
 
               <Backdrop className={classes.backdrop} open={isLoading}>
                   <CircularProgress color="inherit" />
@@ -149,10 +156,14 @@ const CustomerHome = () => {
               <div className={Styles.list}>
                 {customerList}
               </div>
-              
-            </main>
-            
-        </div>
+              <br/>
+              <Link to="/customer/create" style={{ textDecoration: 'none'}}>
+              <Button variant="contained" color="primary">
+                Add New Customer
+              </Button>
+              </Link>
+            </main>            
+        </div>  
     )
 };
 
