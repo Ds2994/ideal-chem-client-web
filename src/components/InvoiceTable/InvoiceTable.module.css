@@ -1,0 +1,98 @@
+.container {
+  display: block;
+  align-items: center;
+  overflow-x: auto;
+  font-weight: 600;
+  font-family: 'CircularStd', sans-serif;
+  font-size: .9375rem;
+  line-height: 1.5;
+}
+
+table {
+  width: 100%;
+  border-spacing: 2px;
+  border-collapse: collapse;
+  color: #333;
+}
+
+thead {
+    vertical-align: middle;
+    border-color: inherit;
+    border-collapse: collapse;
+}
+
+tr {
+  box-shadow: 0 0 3px #e5e5e5;
+}
+
+td, th {
+  text-align: left;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #dee2e6;
+  padding: 10px 10px;
+  vertical-align: middle;
+  border-top: 1px solid #dee2e6;
+}
+
+th:first-child, td:first-child {
+    padding-left: 15px;
+}
+
+tbody {
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+tbody > tr:nth-of-type(2n+1) {
+    background-color: #ffffff;
+}
+
+tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.05);
+}
+
+.paid {
+  display: inline;
+  font-size: 85%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-radius: .25rem;
+  border-top: 100px;
+  padding: 5px 5px;
+  color: #fff;
+  background-color:rgb(10, 121, 10);
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.sent {
+  display: inline;
+  font-size: 85%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+  padding: 5px 5px;
+  color: #fff;
+  background-color:rgb(29, 59, 194);
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.partial {
+  display: inline;
+  font-size: 85%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+  padding: 5px 5px;
+  color: #fff;
+  background-color: rgb(231, 23, 40);
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
