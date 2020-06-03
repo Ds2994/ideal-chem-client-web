@@ -1,0 +1,248 @@
+.card {
+  width: 60%;
+  height: 160px;
+  margin: 16px auto;
+  border-radius: 10px; 
+  border: 1px solid #eee;
+  box-shadow: 0 3px 4px #ccc;
+  padding: 16px;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 0.7fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  font-family: 'CircularStd', sans-serif;
+  line-height: 1.5;
+  background-color: #fcfcfc;
+}
+
+.box1 {
+  grid-row-start: 1; 
+  grid-row-end: 5;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.image {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px;
+  width: 90%;
+  height: 90%;
+  float: left;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-top: 1px;
+  padding: 0px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.unit {
+  background-color: #003366;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 17px;
+	font-weight: 800;
+	font-family: Celias,Helvetica;
+  text-align: center;
+  height: 30px;
+  width: 70%;
+  margin-left: 30%;
+  padding: 0;
+}
+
+.unit2 {
+  font-size: 1.5rem;
+  color: #008080;
+  border-radius: 4px;
+	font-weight: 800;
+	font-family: Celias,Helvetica;
+  text-align: center;
+  height: 30px;
+  width: 70%;
+  margin-left: 30%;
+  padding: 0;
+}
+
+.add {
+  margin-left: 10px;
+  width: 15%;
+}
+
+.minus {
+  margin-right: 10px;
+  width: 15%;
+}
+
+.name {
+	grid-row-start: 2; 
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  margin-left: 20px;
+  margin-top: 5px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.cas {
+  grid-row-start: 3; 
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  margin-left: 20px;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.select {
+  grid-row-start: 4; 
+  grid-row-end: 5;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin-top: 5px;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.size {
+  color: #1f1f1f;
+  grid-row-start: 4; 
+  grid-row-end: 5;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin-top: 5px;
+  margin-left: 20px;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.box4 {
+  margin-top: 4px;
+  grid-row-start: 4; 
+  grid-row-end: 5;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.input {
+  margin-top: 2px;
+  width: 30%;
+  font-size: large;
+}
+
+.PackSize {
+  --radius: 3px;
+  --baseFg: dimgray;
+  --baseBg: white;
+  --accentFg: #006fc2;
+  --accentBg: #bae1ff;
+}
+
+select {
+  font: 400 12px/1.3 sans-serif;
+  -webkit-appearance: none;
+  appearance: none;
+  color: var(--baseFg);
+  border: 1px solid var(--baseFg);
+  line-height: 1;
+  outline: 0;
+  padding: 0.65em 2.5em 0.55em 0.75em;
+  border-radius: var(--radius);
+  background-color: var(--baseBg);
+  background-image: linear-gradient(var(--baseFg), var(--baseFg)),
+    linear-gradient(-135deg, transparent 50%, var(--accentBg) 50%),
+    linear-gradient(-225deg, transparent 50%, var(--accentBg) 50%),
+    linear-gradient(var(--accentBg) 42%, var(--accentFg) 42%);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 1px 100%, 20px 22px, 20px 22px, 20px 100%;
+  background-position: right 20px center, right bottom, right bottom, right bottom;   
+}
+
+select:hover {
+  background-image: linear-gradient(var(--accentFg), var(--accentFg)),
+    linear-gradient(-135deg, transparent 50%, var(--accentFg) 50%),
+    linear-gradient(-225deg, transparent 50%, var(--accentFg) 50%),
+    linear-gradient(var(--accentFg) 42%, var(--accentBg) 42%);
+}
+
+select:active {
+  background-image: linear-gradient(var(--accentFg), var(--accentFg)),
+    linear-gradient(-135deg, transparent 50%, var(--accentFg) 50%),
+    linear-gradient(-225deg, transparent 50%, var(--accentFg) 50%),
+    linear-gradient(var(--accentFg) 42%, var(--accentBg) 42%);
+  color: var(--accentBg);
+  border-color: var(--accentFg);
+  background-color: var(--accentFg);
+}
+
+.button {
+  background-color: #e96125;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  box-shadow: 0 2px 3px #ccc;
+  display: inline-block;
+  margin: 0 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  float: right;
+  height: 30px;
+  width: 45%;
+  transition: all 0.5s;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: Celias,Helvetica;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button2 {
+  background-color: #c80815;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  box-shadow: 0 2px 3px #ccc;
+  display: inline-block;
+  margin: 0 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  float: right;
+  height: 30px;
+  width: 45%;
+  transition: all 0.5s;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: Celias,Helvetica;
+}

@@ -158,9 +158,9 @@ const CustomerHome = () => {
               </div>
               <br/>
               <Link to="/customer/create" style={{ textDecoration: 'none'}}>
-              <Button variant="contained" color="primary">
-                Add New Customer
-              </Button>
+                <Button variant="contained" color="primary">
+                  Add New Customer
+                </Button>
               </Link>
             </main>            
         </div>  

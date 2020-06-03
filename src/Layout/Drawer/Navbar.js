@@ -1,19 +1,21 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { Link, Route, Switch } from 'react-router-dom';
+
 import List from '@material-ui/core/List';
+import Drawer from '@material-ui/core/Drawer';
+import HomeIcon from '@material-ui/icons/Home';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
+import { makeStyles } from '@material-ui/core/styles';
+import ViewListIcon from '@material-ui/icons/ViewList';
+import { Link, Route, Switch } from 'react-router-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import PeopleAltRoundedIcon from '@material-ui/icons/PeopleAltRounded';
-import ViewListIcon from '@material-ui/icons/ViewList';
-import HomeIcon from '@material-ui/icons/Home';
-import CustomerHome from '../../containers/CustomerHome/CustomerHome';
-import CustomerCreate from '../../containers/CustomerCreate/CustomerCreate';
 import InvoiceHome from '../../containers/InvoiceHome/InvoiceHome';
+import CustomerHome from '../../containers/CustomerHome/CustomerHome';
+import PeopleAltRoundedIcon from '@material-ui/icons/PeopleAltRounded';
+import ProductSearch from '../../containers/ProductSearch/ProductSearch';
+import CustomerCreate from '../../containers/CustomerCreate/CustomerCreate';
 
 const drawerWidth = 200;
 
@@ -84,6 +86,7 @@ const Navbar = () => {
             <Route exact path="/customer" component={CustomerHome} />
             <Route exact path="/customer/create" component={CustomerCreate} />
             <Route exact path="/invoice" component={InvoiceHome} />
+            <Route exact path="/invoice/product" component={ProductSearch} />
           </Switch>
         </main>
     </div>

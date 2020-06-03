@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import Appbar from '../../components/Appbar/Appbar';
 import Styles from './InvoiceHome.module.css';
 import AddIcon from '@material-ui/icons/Add';
+import { Link } from 'react-router-dom';
 import InvoiceTable from '../../components/InvoiceTable/InvoiceTable';
 import { getLatestInvoices, getLatestInvoicesByDate } from '../../utils/API/InvoiceAPI';
 import DatePicker from "react-datepicker";
@@ -71,10 +72,12 @@ const InvoiceHome = () => {
       <div className={Styles.header}>
         <div className={Styles.invoice}><h1>Invoices</h1></div>
         <div className={Styles.buttonAdd}>
-        <Button
-          variant="contained" color="primary" startIcon={<AddIcon />}>
-          Create Invoice
-        </Button>
+          <Link to="/invoice/product" style={{ textDecoration: 'none'}}>
+            <Button
+              variant="contained" color="primary" startIcon={<AddIcon />}>
+              Create Invoice
+            </Button>
+          </Link>
         </div>
       </div>
       <div className={Styles.datePickers}>
