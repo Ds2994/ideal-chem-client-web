@@ -8,20 +8,20 @@
   line-height: 1.5;
 }
 
-table {
+.invoiceTable {
   width: 100%;
   border-spacing: 2px;
   border-collapse: collapse;
   color: #333;
 }
 
-thead {
+.invoiceThead {
     vertical-align: middle;
     border-color: inherit;
     border-collapse: collapse;
 }
 
-tr {
+.trInvHome {
   box-shadow: 0 0 3px #e5e5e5;
 }
 
@@ -38,7 +38,7 @@ th:first-child, td:first-child {
     padding-left: 15px;
 }
 
-tbody {
+.invoiceTbody {
   vertical-align: middle;
   border-color: inherit;
 }

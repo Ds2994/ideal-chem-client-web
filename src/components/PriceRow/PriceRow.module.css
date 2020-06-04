@@ -1,0 +1,43 @@
+.priceRowTR {
+  text-align: center;
+}
+
+.PriceRowInput {
+  border: 0;
+  background-color: transparent;
+  width: 9.5cm;
+}
+
+.RateRowInput {
+  border: 0;
+  background-color: transparent;
+  width: 2cm ;
+}
+
+.disc {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 2cm;
+}
+
+.DiscountRowInput {
+  border: 0;
+  background-color: transparent;
+  width: 1.5cm;
+}
+
+.SelectBox {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 75px;
+  background-color: transparent;
+}
+
+.uom {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 80px;
+}

@@ -7,10 +7,14 @@ import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Styles from './ProductSearch.module.css';
 import Product from '../../components/Product/Product';
+import { connect } from 'react-redux';
 import { getProductDetails } from '../../utils/API/ProductAPI';
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import SelectedProduct from '../../components/Product/SelectedProduct';
+import Fab from '@material-ui/core/Fab';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
@@ -25,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ProductSearch = () => {
+const ProductSearch = (props) => {
   const classes = useStyles();
   const [name, setName] = useState(null);
   const [products, setProducts] = useState([]);
@@ -109,7 +113,10 @@ const ProductSearch = () => {
   // This is right side product card
   var updateProduct = null;
   if(selectedProducts.length > 0) {
+    var i = 1;
     updateProduct = (selectedProducts.map((product, index) => {
+      product.displayID = i;
+      i++;
       return (
         <SelectedProduct 
           product={product}
@@ -135,6 +142,11 @@ const ProductSearch = () => {
         );
     }));
   };
+
+  const onNextClick = () => {
+    console.log("[CLICK]", selectedProducts)
+    props.onUpdate(selectedProducts);
+  }
   
   return(
     <div>
@@ -165,9 +177,17 @@ const ProductSearch = () => {
               
           </div>
           <div className={Styles.box2}>
+            <div className={Styles.heading2}>
             <h1>Selected Products</h1>
+            <Link to="/invoice/price" style={{ textDecoration: 'none'}}>
+              <Fab color="primary" size="small" aria-label="add">
+                <PlayArrowIcon onClick={onNextClick}/>
+              </Fab>
+            </Link>
+            </div>
               {updateProduct}
           </div>
+          
         </div>
 
       </main>
@@ -175,4 +195,10 @@ const ProductSearch = () => {
   )
 };
 
-export default ProductSearch;
+const mapDispatchToProps = dispatch => {
+  return {
+    onUpdate: (products) => dispatch({type: 'UPDATE' , value: products})
+  };
+};
+
+export default connect(null, mapDispatchToProps)(ProductSearch);

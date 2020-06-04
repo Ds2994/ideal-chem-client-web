@@ -52,14 +52,26 @@ const Product = (props) => {
 
   const onClickHandler = () => {
     const selectedProduct = {
+      displayID: 0,
       id: id,
       code: props.product.code,
       casNumber: props.product.casNumber,
       productName: props.product.productName,
-      comapanyName: props.product.comapanyName,
+      companyName: props.product.comapanyName,
       price: price,
       size: size,
-      unit: unit
+      unit: unit,
+      total: 0,
+      discountAmt: 0,
+      taxableAmt: 0,
+      discount: 0.00,
+      cgst: 0.00,
+      cgstAmt: 0.00,
+      sgst: 0.00,
+      sgstAmt: 0.00,
+      igst: 0.00,
+      igstAmt: 0.00,
+      totalAmt: 0.00
     };
 
     console.log(selectedProduct);

@@ -8,21 +8,21 @@ const drawerWidth = 200;
 
 const useStyles = makeStyles((theme) => ({
 
-  appBar: {
+  appBarMain: {
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,
   },
   // necessary for content to be below app bar
-  toolbar: theme.mixins.toolbar,
+  toolBar: theme.mixins.toolbar,
 
 }));
 
 const Appbar = (props) => {
   const classes = useStyles();
   return (
-    <AppBar position="fixed" className={classes.appBar}>
+    <AppBar position="fixed" className={classes.appBarMain}>
       <Toolbar>
-        <div className={Styles.toolBar}>
+        <div className={Styles.toolBarMain}>
           <h2>{props.title}</h2>
         </div>              
       </Toolbar>

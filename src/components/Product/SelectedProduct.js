@@ -11,10 +11,10 @@ const SelectedProduct = (props) => {
   },[]);
 
   const getImageUrl = () => {
-    if(props.product.comapanyName === "SRL") {
+    if(props.product.companyName === "SRL") {
       return SRL;
     }
-    if(props.product.comapanyName === "Spectrochem") {
+    if(props.product.companyName === "Spectrochem") {
       return SPECTROCHEM;
     }
   };

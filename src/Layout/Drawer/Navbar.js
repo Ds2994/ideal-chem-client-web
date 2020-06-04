@@ -16,6 +16,7 @@ import CustomerHome from '../../containers/CustomerHome/CustomerHome';
 import PeopleAltRoundedIcon from '@material-ui/icons/PeopleAltRounded';
 import ProductSearch from '../../containers/ProductSearch/ProductSearch';
 import CustomerCreate from '../../containers/CustomerCreate/CustomerCreate';
+import InvoicePrice from '../../containers/InvoicePrice/InvoicePrice';
 
 const drawerWidth = 200;
 
@@ -59,7 +60,7 @@ const Navbar = () => {
             <div className={classes.toolbar} />
             <Divider />
                 <List>
-                  <Link to="/" style={{ textDecoration: 'none'}}>
+                  <Link to="/invoice/price" style={{ textDecoration: 'none'}}>
                     <ListItem button key="Dashboard">
                         <ListItemIcon><HomeIcon color="primary"/></ListItemIcon>
                         <ListItemText primary="Dashboard" color="primary"/>
@@ -87,6 +88,7 @@ const Navbar = () => {
             <Route exact path="/customer/create" component={CustomerCreate} />
             <Route exact path="/invoice" component={InvoiceHome} />
             <Route exact path="/invoice/product" component={ProductSearch} />
+            <Route exact path="/invoice/price" component={InvoicePrice} />
           </Switch>
         </main>
     </div>

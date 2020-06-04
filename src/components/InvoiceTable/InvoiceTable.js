@@ -29,7 +29,7 @@ const InvoiceTable = (props) => {
   if(props.invoices.length > 0) {
     tableData = (props.invoices.map((invoice, index) => {
       return (
-        <tr key={invoice.id}>
+        <tr className={Styles.trInvHome} key={invoice.id}>
           <td>{invoice.id}</td>
           <td>{invoice.reference}</td>
           <td>{invoice.name}</td>
@@ -44,9 +44,9 @@ const InvoiceTable = (props) => {
 
   return (
     <div className={Styles.container}>
-      <table>
-        <thead>
-          <tr>
+      <table className={Styles.invoiceTable}>
+        <thead className={Styles.invoiceThead}>
+          <tr className={Styles.trInvHome}>
             <th>#</th>
             <th>Invoice Number</th>
             <th>Customer Name</th>
@@ -56,7 +56,7 @@ const InvoiceTable = (props) => {
             <th>Action</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className={Styles.invoiceTbody}>
           {tableData}
         </tbody>
       </table>
